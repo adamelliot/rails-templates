@@ -1,7 +1,6 @@
 load_template "http://github.com/adamelliot/rails-templates/raw/master/base.rb"
 
-plugin "db-populate", :git => "git://github.com/ffmike/db-populate.git", :submodule => true
-file "db/populate/.gitignore"
+plugin "paperclip", :git => "git://github.com/thoughtbot/paperclip.git", :submodule => true
 
 #if yes? "Setup Authlogic?"
 #  

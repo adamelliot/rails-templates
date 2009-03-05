@@ -1,8 +1,11 @@
 gem "thoughtbot-shoulda", :lib => 'shoulda', :source => 'http://gems.github.com'
 gem "haml"
 gem 'RedCloth', :lib => 'redcloth'
-
+ 
 rake "gems:install", :sudo => true
+
+plugin "db-populate", :git => "git://github.com/ffmike/db-populate.git", :submodule => true
+file "db/populate/.gitignore"
 
 git :init
 
@@ -10,7 +13,7 @@ run "haml --rails ."
 run "echo 'TODO Fill this shizzle with some Jangles' > README"
 run "touch tmp/.gitignore tmp/.gitignore vendor/.gitignore"
 run "cp config/database.yml config/example_database.yml"
-run "rm -f public/index.html public/javascripts"
+run "rm -rf public/index.html public/javascripts"
 run 'curl http://jqueryjs.googlecode.com/files/jquery-1.3.2.min.js > public/javascripts/jquery.js'
 
 file "public/javascripts/application.js"
