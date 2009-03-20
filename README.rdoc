@@ -1,1 +1,6 @@
-Some rails templates for my applications.
+Some rails templates for my applications. It uses my fork of Ryan Bates 
+nifty-generators.
+
+  http://github.com/adamelliot/nifty-generators/
+
+
