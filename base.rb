@@ -4,11 +4,11 @@ gem "haml"
 gem 'RedCloth', :lib => 'redcloth'
  
 rake "gems:install", :sudo => true
+git :init
 
 plugin 'will_paginate', :git => 'git://github.com/mislav/will_paginate.git', :submodule => true
 plugin "db-populate", :git => "git://github.com/ffmike/db-populate.git", :submodule => true
 file "db/populate/.gitignore"
-git :init
 
 run "haml --rails ."
 run "echo 'TODO Fill this shizzle with some Jangles' > README"
