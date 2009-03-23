@@ -2,6 +2,7 @@ gem "thoughtbot-shoulda", :lib => 'shoulda', :source => 'http://gems.github.com'
 gem 'thoughtbot-factory_girl', :lib => 'factory_girl', :source => 'http://gems.github.com'
 gem "haml"
 gem 'RedCloth', :lib => 'redcloth'
+gem "adamelliot-nifty-authentication", :source => "http://gems.github.com", :lib => "nifty-generators"
  
 rake "gems:install", :sudo => true
 git :init
@@ -31,6 +32,8 @@ config/database.yml
 db/*.sqlite3
 db/*.db
 IGNORE
+
+generate :nifty_layout
 
 git :submodule => "init"
 git :add => ".", :commit => '-m "Initial commit."'
