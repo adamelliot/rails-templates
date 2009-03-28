@@ -2,11 +2,12 @@ gem "thoughtbot-shoulda", :lib => 'shoulda', :source => 'http://gems.github.com'
 gem 'thoughtbot-factory_girl', :lib => 'factory_girl', :source => 'http://gems.github.com'
 gem "haml"
 gem 'RedCloth', :lib => 'redcloth'
-#gem "adamelliot-nifty-generators", :source => "http://gems.github.com", :lib => "nifty-generators"
+gem "adamelliot-nifty-generators", :source => "http://gems.github.com", :lib => "nifty-generators"
  
 rake "gems:install", :sudo => true
 git :init
 
+plugin "jasmin", :git => "git://github.com/adamelliot/jasmin.git", :submodule => true  
 plugin 'will_paginate', :git => 'git://github.com/mislav/will_paginate.git', :submodule => true
 plugin "db-populate", :git => "git://github.com/ffmike/db-populate.git", :submodule => true
 file "db/populate/.gitignore"

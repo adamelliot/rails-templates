@@ -3,7 +3,6 @@ load_template "http://github.com/adamelliot/rails-templates/raw/master/base.rb"
 plugin "preserve_attributes", :git => "git://github.com/adamelliot/preserve_attributes.git", :submodule => true  
 plugin "paperclip", :git => "git://github.com/thoughtbot/paperclip.git", :submodule => true
 
-
 if yes? "Setup Authlogic?"
   reset = ""
   reset = "--password-reset" if yes? "Generate password resets?"
@@ -23,7 +22,7 @@ if yes? "Setup Authlogic?"
 User.create_or_update(
   :id                    => 1,
   :login                 => "#{username}",
-  :salt                  => salt = Authlogic::Random.hex_token,
+  :password_salt         => salt = Authlogic::Random.hex_token,
   :crypted_password      => Authlogic::CryptoProviders::BCrypt.encrypt("#{password}" + salt),
   :password              => "#{password}",
   :password_confirmation => "#{password}",
