@@ -14,7 +14,7 @@ plugin "jasmin", :git => "git://github.com/adamelliot/jasmin.git", :submodule =>
 
 run "haml --rails ."
 run "echo 'TODO Fill this shizzle with some Jangles' > README.rdoc"
-run "touch tmp/.gitignore vendor/.gitignore"
+run "touch tmp/.gitignore vendor/.gitignore public/images/.gitignore"
 run "cp config/database.yml config/database.example.yml"
 run "rm -rf public/index.html public/javascripts"
 run "rm -rf public/images/rails.png"
@@ -36,6 +36,9 @@ db/*.db
 IGNORE
 
 #generate :nifty_layout
+
+# Add the rails edge to the project
+run "git-submodule add git://github.com/rails/rails.git vendor/rails"
 
 git :submodule => "init"
 git :add => ".", :commit => '-m "Initial commit."'
